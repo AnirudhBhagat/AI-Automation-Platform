@@ -1,0 +1,27 @@
+{
+  "eb2fa5af88ba338bb559ecbad624d400b2b4d81cce0aa72366c5a50b4f48dbb9": {
+    "decision": "NEEDS_INFO",
+    "summary": "Model output was not valid JSON.",
+    "rationale": [
+      {
+        "claim": "JSON parsing failed",
+        "evidence_key": "N/A"
+      }
+    ],
+    "risks": [
+      "MODEL_OUTPUT_NOT_JSON"
+    ],
+    "follow_ups": [
+      "Adjust prompt or enforce JSON mode if available in your SDK."
+    ],
+    "audit": {
+      "trace_id": "7d6f84f0-5ea5-4321-bafd-cebe7573771b",
+      "workflow": "DEAL_APPROVAL",
+      "model": "gemini-2.5-flash",
+      "prompt_version": "v1"
+    },
+    "missing_items": [],
+    "_raw_model_output": "```json\n{\n  \"decision\": \"APPROVE\",\n  \"summary\": \"The $120,000 ARR deal for Acme with a 15% discount and NET-30 terms is approved, as it complies with all auto-approval policies.\",\n  \"rationale\": [\n    {\n      \"claim\": \"The computed Annual Recurring Revenue (ARR) for this deal is $120,000.\",\n      \"evidence_key\": \"finance.computed_arr_usd\"\n    },\n    {\n      \"claim\": \"The requested discount of 15% is within the company's discount policy cap of 20%.\",\n      \"evidence_key\": \"compliance.policy.discount_cap_pct\"\n    },\n    {\n      \"claim\": \"The deal's ARR of $120,000 is within the auto-approval threshold of $200,000.\",\n      \"evidence_key\": \"compliance.policy.max_auto_approve_arr_usd\"\n    },\n    {\n      \"claim\": \"No policy violations were detected for this deal.\",\n      \"evidence_key\": \"compliance.policy.violations\"\n    },\n    {\n      \"claim\": \"Acme has an active billing profile with a historical on-time payment rate of 96%.\",\n      \"evidence_key\": \"finance.billing_profile.on_time_payment_rate\"\n    }\n  ],\n  \"risks\": [\n    \"A 4% rate of non-on-time payments has been observed for Acme in their billing history.\"\n  ],\n  \"follow_ups\": [\n    \"Proceed with closing the opportunity OPP_1001 in the CRM.\",\n    \"Monitor Acme's payment performance to ensure continued on-time payments.\"\n  ],\n  \"audit\": {\n    \"trace_id\": \"7d6f84f0-5ea5-4321-bafd-cebe7573771b\",\n    \"workflow\": \"DEAL_APPROVAL\",\n    \"model\": \"gemini-2.5-flash\",\n    \"prompt_version\": \"v1\"\n  },\n  \"missing_items\": []\n}\n```",
+    "_json_error": "Expecting value: line 1 column 1 (char 0)"
+  }
+}
